@@ -29,9 +29,10 @@ class Daftar extends CI_Controller {
 		$rand = substr(str_shuffle($permitted_chars), 0, 6);
 		$data = array(
 			'nama' => $email,
+			'no_induk' => $npm,
 			'email' => $email,
 			'password' => md5($password),
-			'kode' => $rand
+			'status' => 3
 		);
 		if ($emailSplit[1] == $studentUPN) {
 			if ($emailSplit[0] == $npm) {
@@ -42,34 +43,36 @@ class Daftar extends CI_Controller {
 						redirect('daftar/?msg='. $msg);
 					}else{
 						if ($this->crud->create($this->_Tusers, $data)) {
-							$this->session->set_userdata('email',$email);
-							$subject = "KODE VERIFIKASI SIMPANGAN IF UPNVJT";
-							$message = "Kode verifikasi anda adalah <br> <b style='font-size:40px'> $rand </b>";
-							// if ($this->send_email->send_email($email,$subject,$message) == 0) {
-							$sendemail = $this->send_email->sending($email,$subject,$message);
-							if ($sendemail) {
-								redirect('daftar/verifikasi');
-							}else{
-								echo $sendemail;
-							}
+							// $this->session->set_userdata('email',$email);
+							$this->session->set_flashdata('success_registration', 'Berhasil mendaftar, Silahkan login.');
+							redirect('login');
+							// $subject = "KODE VERIFIKASI SIMPANGAN IF UPNVJT";
+							// $message = "Kode verifikasi anda adalah <br> <b style='font-size:40px'> $rand </b>";
+							// // if ($this->send_email->send_email($email,$subject,$message) == 0) {
+							// $sendemail = $this->send_email->sending($email,$subject,$message);
+							// if ($sendemail) {
+							// 	redirect('daftar/verifikasi');
+							// }else{
+							// 	echo $sendemail;
 							// $msg = 'Silahkan cek email anda untuk mendapatkan kode verifikasi!';
+							// }
 
 						}else{
-							$msg = 'Gagal Mendaftar!';
-							redirect('daftar/?msg='. $msg);
+							$this->session->set_flashdata('danger_registration', 'Gagal Mendaftar!');
+							redirect('daftar');
 						}
 					}
 				}else{
-					$msg = 'Gagal Mendaftar, password harus sama!';
-					redirect('daftar/?msg='. $msg);
+					$this->session->set_flashdata('danger_registration', 'Gagal Mendaftar, password harus sama!');
+					redirect('daftar');
 				}
 			}else{
-				$msg = 'email tidak  sesuai dengan npm yang di inputkan';
-				redirect('daftar/?msg='.$msg);
+				$this->session->set_flashdata('danger_registration', 'email tidak  sesuai dengan npm yang di inputkan');
+				redirect('daftar');
 			}
 		}else{
-			$msg = 'Wajib menggunakan email kampus';
-			redirect('daftar/?msg='.$msg);
+			$this->session->set_flashdata('danger_registration', 'Wajib menggunakan email kampus');
+			redirect('daftar');
 		}
 
 	}

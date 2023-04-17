@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Blank extends CI_Controller {
+class Dosen extends CI_Controller {
 
 	function __construct()
 	{
@@ -15,7 +15,7 @@ class Blank extends CI_Controller {
 
 	public function index()
 	{
-		$data['page'] = 'blank';
-		$this->load->view('blank', $data);
+		$data['page'] = 'dosen';
+		$this->load->view('dosen',$data);
 	}
 }

@@ -41,12 +41,19 @@
                   <div class="sign-user_card">
                         <img src="https://www.upnjatim.ac.id/wp-content/uploads/2022/11/logoupnblu-1.png" class="img-fluid rounded-normal light-logo logo" alt="logo">
                      <h3 class="mb-3">Daftar</h3>
-                     <?php if (isset($_GET['msg'])) { ?>
+                     <?php if ($this->session->flashdata('danger_registration')) { ?>
                         <div class="alert text-white bg-danger" role="alert">
                            <div class="iq-alert-icon">
                               <small><i class="ri-alert-line"></i></small>
                            </div>
-                           <div class="iq-alert-text"><?= $_GET['msg'] ?></div>
+                           <div class="iq-alert-text"><?= $this->session->flashdata('danger_registration') ?></div>
+                           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                           <i class="ri-close-line"></i>
+                           </button>
+                        </div>
+                     <?php }else if($this->session->flashdata('success_registration')) { ?>
+                        <div class="alert text-white bg-success" role="alert">
+                           <div class="iq-alert-text"><?= $this->session->flashdata('success_registration') ?></div>
                            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                            <i class="ri-close-line"></i>
                            </button>

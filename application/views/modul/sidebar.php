@@ -11,35 +11,35 @@
   <div class="data-scrollbar" data-scroll="1">
       <nav class="iq-sidebar-menu">
           <ul id="iq-sidebar-toggle" class="iq-menu">
-               <li class=" ">
-                      <a href="<?= base_url() ?>" class="">
+               <li class=" <?php if($page == 'dashboard'){echo "active";}  ?>">
+                      <a href="<?= base_url('dashboard') ?>" class="">
                           <i class="las la-home iq-arrow-left"></i><span>Dashboard</span>
                       </a>
                   <ul id="dashboard" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                   </ul>
                </li>
-               <li class=" ">
-                      <a href="<?= base_url() ?>" class="">
+               <li class=" <?php if($page == 'pengajuan'){echo "active";}  ?> ">
+                      <a href="<?= base_url('pengajuan') ?>" class="">
                           <i class="las la-plus iq-arrow-left"></i><span>Pengajuan PKL</span>
                       </a>
                   <ul id="dashboard" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                   </ul>
                </li>
-               <li class=" ">
-                      <a href="<?= base_url() ?>" class="">
+               <li class="<?php if($page == 'mahasiswa'){echo "active";}  ?> ">
+                      <a href="<?= base_url('mahasiswa') ?>" class="">
                           <i class="las la-users iq-arrow-left"></i><span>Mahasiswa</span>
                       </a>
                   <ul id="dashboard" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                   </ul>
                </li>
-               <li class=" ">
-                      <a href="<?= base_url() ?>" class="">
+               <li class="<?php if($page == 'dosen'){echo "active";}  ?>">
+                      <a href="<?= base_url('dosen') ?>" class="">
                           <i class="las la-user-tie iq-arrow-left"></i><span>Dosen</span>
                       </a>
                   <ul id="dashboard" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                   </ul>
                </li>
-               <li class=" ">
+               <li class=" <?php if($page == 'berkas'){echo "active";}  ?>">
                       <a href="<?= base_url('berkas') ?>" class="">
                           <i class="lab la-wpforms iq-arrow-left"></i><span>Berkas</span>
                       </a>
