@@ -38,6 +38,18 @@ class Users extends CI_Controller {
 			redirect('dosen');
 		}
 	}
+
+	public function delete_dosen($id_user)
+	{
+		if ($this->crud->delete($this->_Tusers,array('id_user' => $id_user))) {
+			$this->session->set_flashdata('success_dosen', "Data berhasil dihapus!");
+		}else{
+			$this->session->set_flashdata('danger_dosen', "Data gagal terhapus!");
+		}
+
+		redirect('dosen');
+
+	}
 }
 
 

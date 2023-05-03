@@ -24,6 +24,6 @@ class M_crud extends CI_Model {
     public function delete($table,$where)
     {
         $this->db->where($where);
-        $this->db->delete($table);
+        return $this->db->delete($table);
     }
 }
