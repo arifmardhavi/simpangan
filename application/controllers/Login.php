@@ -24,6 +24,7 @@ class Login extends CI_Controller {
 		if ($verify) {
 			if (md5($password) == $verify->password) {
 				$this->session->set_userdata('id_user',$verify->id_user);
+				$this->session->set_userdata('no_induk',$verify->no_induk);
 				$this->session->set_userdata('email',$email);
 				redirect('blank');
 			}else{

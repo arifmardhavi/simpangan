@@ -20,7 +20,7 @@
                </li>
                <li class=" <?php if($page == 'pengajuan'){echo "active";}  ?> ">
                       <a href="<?= base_url('pengajuan') ?>" class="">
-                          <i class="las la-plus iq-arrow-left"></i><span>Pengajuan PKL</span>
+                          <i class="las la-plus iq-arrow-left"></i><span>Ajuan PKL</span>
                       </a>
                   <ul id="dashboard" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                   </ul>
@@ -42,6 +42,13 @@
                <li class=" <?php if($page == 'berkas'){echo "active";}  ?>">
                       <a href="<?= base_url('berkas') ?>" class="">
                           <i class="lab la-wpforms iq-arrow-left"></i><span>Berkas</span>
+                      </a>
+                  <ul id="dashboard" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
+                  </ul>
+               </li>
+               <li class="">
+                      <a href="<?= base_url('users/logout') ?>" class="">
+                          <i class="lab la-wpforms iq-arrow-left"></i><span>Logout</span>
                       </a>
                   <ul id="dashboard" class="iq-submenu collapse" data-parent="#iq-sidebar-toggle">
                   </ul>

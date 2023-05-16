@@ -20,6 +20,7 @@ class Daftar extends CI_Controller {
 	public function auth()
 	{
 		$npm = $this->input->post('npm');
+		$nama = $this->input->post('nama');
 		$email = $this->input->post('email');
 		$password = $this->input->post('password');
 		$konfirmasi_password = $this->input->post('konfirmasi_password');
@@ -28,7 +29,7 @@ class Daftar extends CI_Controller {
 		$permitted_chars = '0123456789abcdefghijklmnopqrstuvwxyz';
 		$rand = substr(str_shuffle($permitted_chars), 0, 6);
 		$data = array(
-			'nama' => $email,
+			'nama' => $nama,
 			'no_induk' => $npm,
 			'email' => $email,
 			'password' => md5($password),

@@ -50,6 +50,12 @@ class Users extends CI_Controller {
 		redirect('dosen');
 
 	}
+
+	public function logout()
+	{
+		$this->session->sess_destroy();
+		redirect('login');
+	}
 }
 
 
