@@ -67,7 +67,7 @@
                                               </span>
                                               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton6">
                                                   <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modalview<?= $data->id_kelompok ?>"><i class="ri-eye-fill mr-2"></i>View</a>
-                                                  <a class="dropdown-item" href="#"><i class="ri-pencil-fill mr-2"></i>Edit</a>
+                                                  <a class="dropdown-item" href="<?= base_url('pengajuan/edit/'.$data->id_kelompok) ?>"><i class="ri-pencil-fill mr-2"></i>Edit</a>
                                                   <a class="dropdown-item" href="#" data-toggle="modal" data-target="#modaldelete<?= $data->id_kelompok ?>"><i class="ri-delete-bin-6-fill mr-2"></i>Delete</a>
                                               </div>
                                           </div>
@@ -238,7 +238,7 @@
                                                 :
                                               </div>
                                               <div class="col-9" >
-                                                <a href="<?= $data->usulan_pkl ?>"><?= $data->usulan_pkl ?></a>
+                                                <a href="<?= $data->usulan_pkl ?>" target="_blank" ><?= $data->usulan_pkl ?></a>
                                               </div>
                                             </div>
                                             <div class="row" >
@@ -249,7 +249,7 @@
                                                 :
                                               </div>
                                               <div class="col-9" >
-                                                <a href="<?= $data->transkrip_pkl ?>"><?= $data->transkrip_pkl ?></a>
+                                                <a href="<?= $data->transkrip_pkl ?>" target="_blank" ><?= $data->transkrip_pkl ?></a>
                                               </div>
                                             </div>
                                             <div class="row" >
@@ -260,15 +260,14 @@
                                                 :
                                               </div>
                                               <div class="col-9" >
-                                                <a href="<?= $data->surat_balasan ?>"><?= $data->surat_balasan ?></a>
+                                                <a href="<?= $data->surat_balasan ?>" target="_blank" ><?= $data->surat_balasan ?></a>
                                               </div>
                                             </div>
-
                                           </div>
                                         </div>
                                         <div class="modal-footer">
                                           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                          <a href="<?= base_url('pengajuan/delete/'.$data->id_kelompok) ?>" class="btn btn-danger">Hapus</a>
+                                          <a href="<?= base_url('pengajuan/edit/'.$data->id_kelompok) ?>" class="btn btn-warning">Edit</a>
                                         </div>
                                       </div>
                                     </div>
